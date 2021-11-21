@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hycdice-deployment
+  labels:
+    app: hycdice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hycdice
+  template:
+    metadata:
+      labels:
+        app: hycdice
+    spec:
+      containers:
+      - name: hycdice
+        image: k3d-hyc-registry.localhost:5000/hycdice:1
+        ports:
+        - containerPort: 8080
