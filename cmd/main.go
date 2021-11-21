@@ -15,7 +15,7 @@ var healtz = func(w http.ResponseWriter, req *http.Request) {
 
 var d6 = func(rnd *rand.Rand) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
-		result := rnd.Intn(5) + 1
+		result := rnd.Intn(6) + 1
 		fmt.Fprintf(w, "%d", result)
 		w.WriteHeader(http.StatusOK)
 	}
